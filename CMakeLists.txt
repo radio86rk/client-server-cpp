@@ -1,0 +1,8 @@
+project(client-server)
+include_directories(src)
+set(SOURCE_SERVER src/server.cpp)
+set(SOURCE_CLIENT src/client.cpp)
+add_executable(server ${SOURCE_SERVER})	
+add_executable(client ${SOURCE_CLIENT})	
+find_package (Threads)
+target_link_libraries (server ${CMAKE_THREAD_LIBS_INIT})
